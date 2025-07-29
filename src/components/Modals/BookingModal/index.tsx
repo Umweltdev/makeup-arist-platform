@@ -59,7 +59,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
   }));
   const handleServiceSelection = (serviceId: ServiceId) => {
     setSelectedService(services[serviceId]);
-    handleBookingNext();
+    //handleBookingNext();
   };
 
   const handleBookingNext = () => {
@@ -112,12 +112,12 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
               <div className="space-y-4">
                 <button
                   onClick={() => handleServiceSelection('bridal')}
-                  className="w-full text-left p-6 border rounded-lg hover:bg-gray-50 transition-colors"
+                  className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex justify-between items-center">
                     <div>
                       <h3 className="text-lg font-semibold">Bridal Makeup</h3>
-                      <p className="text-gray-600">For your special day</p>
+                      <p className="text-[#5da45d]">For your special day</p>
                     </div>
                     <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
                   </div>
@@ -125,12 +125,12 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                 
                 <button
                   onClick={() => handleServiceSelection('special')}
-                  className="w-full text-left p-6 border rounded-lg hover:bg-gray-50 transition-colors"
+                  className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex justify-between items-center">
                     <div>
                       <h3 className="text-lg font-semibold">Special Event Makeup</h3>
-                      <p className="text-gray-600">For parties, galas, and more</p>
+                      <p className="text-[#5da45d]">For parties, galas, and more</p>
                     </div>
                     <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
                   </div>
@@ -138,24 +138,24 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                 
                 <button
                   onClick={() => handleServiceSelection('editorial')}
-                  className="w-full text-left p-6 border rounded-lg hover:bg-gray-50 transition-colors"
+                  className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex justify-between items-center">
                     <div>
                       <h3 className="text-lg font-semibold">Editorial Makeup</h3>
-                      <p className="text-gray-600">For photoshoots and publications</p>
+                      <p className="text-[#5da45d]">For photoshoots and publications</p>
                     </div>
                     <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
                   </div>
                 </button>
                 
                 <button
-                  className="w-full text-left p-6 border rounded-lg hover:bg-gray-50 transition-colors"
+                  className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex justify-between items-center">
                     <div>
                       <h3 className="text-lg font-semibold">Makeup Lesson</h3>
-                      <p className="text-gray-600">Learn to apply makeup like a pro</p>
+                      <p className="text-[#5da45d]">Learn to apply makeup like a pro</p>
                     </div>
                     <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
                   </div>
@@ -358,7 +358,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
         <div className="w-full max-w-2xl">
           {bookingStep < 4 && renderStepIndicators()}
           {renderStep()}
-          {bookingStep > 1 && bookingStep < 4 && (
+          {bookingStep < 4 && (
             <div className="flex justify-between mt-8">
               <button
                 onClick={handleBookingBack}

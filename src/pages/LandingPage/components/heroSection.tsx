@@ -17,11 +17,11 @@ const HeroSection=()=>{
           )}
           
         <div className="absolute  inset-0 bg-gradient-to-r from-black/60 to-black/40 " />
-        <div className="relative z-10 text-center text-white px-4 max-w-4x mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 mt-10">
+        <div className="relative z-10 text-center text-white px-4  mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 md:mt-10 ">
             Elevate Your Beauty with Expert Makeup Artistry
           </h1>
-          <p className="text-xl mb-8 max-w-2x mx-auto px-16">
+          <p className="text-xl mb-8  mx-auto px-16">
             Transform your look with professional makeup services tailored to your unique style and occasion. 
             Book your appointment today and experience the art of beauty.
           </p>
