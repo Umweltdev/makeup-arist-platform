@@ -1,10 +1,9 @@
 import { useState } from "react"
-import { X, Camera } from "lucide-react"
-import { useNavigate } from "react-router-dom"
+import {  Camera } from "lucide-react"
 import { Navbar } from "@/components/index"
 
 const PortfolioPage = () => {
-    const navigate = useNavigate()
+    
 
     const portfolioImages = [
         { id: 1, category: "Bridal" },
@@ -24,11 +23,7 @@ const PortfolioPage = () => {
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <div className="flex items-center justify-between mb-8">
                         <h1 className="text-4xl font-bold">Portfolio</h1>
-                        <X
-                            className="cursor-pointer hover:text-gray-600"
-                            size={28}
-                            onClick={() => navigate("/")}
-                        />
+                        
                     </div>
 
                     <div className="flex space-x-6 mb-8">

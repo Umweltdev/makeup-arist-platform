@@ -1,9 +1,9 @@
-import { X, Phone, Mail } from "lucide-react"
+import { Phone, Mail } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Navbar } from "@/components/index"
 
 const ContactPage = () => {
-    const navigate = useNavigate()
+    
     return (
         <div>
             <Navbar />
@@ -11,11 +11,7 @@ const ContactPage = () => {
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <div className="flex items-center justify-between mb-8">
                         <h1 className="text-4xl font-bold">Contact</h1>
-                        <X
-                            className="cursor-pointer hover:text-gray-600"
-                            size={28}
-                            onClick={() => navigate("/")}
-                        />
+                        
                     </div>
 
                     <div className="max-w-2xl mx-auto">

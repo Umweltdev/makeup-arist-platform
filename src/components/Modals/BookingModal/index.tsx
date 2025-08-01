@@ -1,8 +1,9 @@
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
 import Modal from '../';
+import { DayPicker, getDefaultClassNames } from "react-day-picker";
+import "react-day-picker/style.css";
 
-type ServiceId = 'bridal' | 'special' | 'editorial';
+type ServiceId = 'bridal' | 'special' | 'editorial'|'lesson';
 
 interface Service {
   id: ServiceId;
@@ -22,6 +23,7 @@ interface ClientDetails {
 }
 const BookingModal = ({onClose, setOpenCheckout}:{onClose:()=>void, setOpenCheckout:()=>void}) => {
     // const [activeModal, setActiveModal] = useState<string | null>(null);
+     const defaultClassNames = getDefaultClassNames();
     const [bookingStep, setBookingStep] = useState<number>(1);
     const [selectedService, setSelectedService] = useState<Service|null>(null);
   const [selectedDate, setSelectedDate] = useState<number|null>(null);
@@ -30,8 +32,8 @@ const BookingModal = ({onClose, setOpenCheckout}:{onClose:()=>void, setOpenCheck
     name: '', email: '', phone: '', location: '', 
     glamStyle: '', skinTone: '', allergies: ''
   });
-const [selectedMonth, setSelectedMonth] = useState<string>('July 2024');
 
+const [selected, setSelected] = useState<Date>();
    const services: Record<ServiceId, Service> = {
     bridal: {
       id: 'bridal',
@@ -50,13 +52,15 @@ const [selectedMonth, setSelectedMonth] = useState<string>('July 2024');
       title: 'Editorial Makeup',
       price: '$200',
       description: 'Makeup for professional photoshoots and creative projects.'
+    },
+    lesson: {
+      id: 'lesson',
+      title: 'Makeup Lesson',
+      price: '$200',
+      description: 'Learn to apply makeup like a pro.'
     }
   };
-const calendarDays = Array.from({ length: 30 }, (_, i) => ({
-    date: i + 1,
-    available: i < 11 || i > 18,
-    selected: i === 4
-  }));
+
   const handleServiceSelection = (serviceId: ServiceId) => {
     setSelectedService(services[serviceId]);
     //handleBookingNext();
@@ -110,56 +114,62 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
             <div>
               <h2 className="text-2xl font-bold mb-8 text-center">Select a service</h2>
               <div className="space-y-4">
-                <button
-                  onClick={() => handleServiceSelection('bridal')}
+                <div
+                  
                   className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => handleServiceSelection('bridal')}
                 >
                   <div className="flex justify-between items-center">
-                    <div>
+                    <label>
                       <h3 className="text-lg font-semibold">Bridal Makeup</h3>
                       <p className="text-[#5da45d]">For your special day</p>
-                    </div>
-                    <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
+                    </label>
+                    <input type="radio" className='outline-none checked:bg-[#5da45d] accent-[#5da45d] focus:ring-0 w-6 h-6' onChange={()=>handleServiceSelection('bridal')} checked={selectedService?.id==="bridal"} />
+                    
                   </div>
-                </button>
+                </div>
                 
-                <button
-                  onClick={() => handleServiceSelection('special')}
+                <div
+                  
                   className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
+                  onClick={() => handleServiceSelection('special')}
                 >
                   <div className="flex justify-between items-center">
-                    <div>
+                    <label>
                       <h3 className="text-lg font-semibold">Special Event Makeup</h3>
                       <p className="text-[#5da45d]">For parties, galas, and more</p>
-                    </div>
-                    <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
+                    </label>
+                    <input type="radio" className='outline-none checked:bg-[#5da45d] accent-[#5da45d] focus:ring-0 w-6 h-6' onChange={()=>handleServiceSelection('special')} checked={selectedService?.id==="special"} />
+                    
                   </div>
-                </button>
+                </div>
                 
-                <button
+                <div
                   onClick={() => handleServiceSelection('editorial')}
                   className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex justify-between items-center">
-                    <div>
+                    <label>
                       <h3 className="text-lg font-semibold">Editorial Makeup</h3>
                       <p className="text-[#5da45d]">For photoshoots and publications</p>
-                    </div>
-                    <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
+                    </label>
+                    <input type="radio" className='outline-none checked:bg-[#5da45d] accent-[#5da45d] focus:ring-0 w-6 h-6' onChange={()=>handleServiceSelection('editorial')} checked={selectedService?.id==="editorial"} />
+                   
                   </div>
-                </button>
+                </div>
                 
-                <button
+                <div
                   className="w-full text-left p-6 border border-[#cfe7cf] rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex justify-between items-center">
-                    <div>
+                    <label>
                       <h3 className="text-lg font-semibold">Makeup Lesson</h3>
                       <p className="text-[#5da45d]">Learn to apply makeup like a pro</p>
-                    </div>
-                    <div className="w-6 h-6 border-2 border-gray-300 rounded-full" />
+                    </label>
+                    <input type="radio" className='outline-none checked:bg-[#5da45d] accent-[#5da45d] focus:ring-0 w-6 h-6' onChange={()=>handleServiceSelection('lesson')} checked={selectedService?.id==="lesson"} />
+                    
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           );
@@ -169,37 +179,26 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
             <div>
               <h2 className="text-2xl font-bold mb-4 text-center">Select Date & Time</h2>
               
-              <div className="flex items-center justify-between mb-6">
-                <ChevronLeft className="cursor-pointer" size={24} />
-                <h3 className="text-lg font-semibold">{selectedMonth}</h3>
-                <ChevronRight className="cursor-pointer" size={24} />
-              </div>
+             
               
               <div className="mb-8">
-                <div className="grid grid-cols-7 gap-1 mb-2">
-                  {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map(day => (
-                    <div key={day} className="text-center text-sm font-medium text-gray-600 p-2">
-                      {day}
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-7 gap-1">
-                  {calendarDays.map((day, index) => (
-                    <button
-                      key={index}
-                      onClick={() => day.available && setSelectedDate(day.date)}
-                      disabled={!day.available}
-                      className={`p-3 rounded-full text-center ${
-                        day.selected ? 'bg-green-500 text-white' :
-                        !day.available ? 'text-gray-300' :
-                        selectedDate === day.date ? 'bg-green-500 text-white' :
-                        'hover:bg-gray-100'
-                      }`}
-                    >
-                      {day.date}
-                    </button>
-                  ))}
-                </div>
+                
+                 <DayPicker
+      mode="single"
+      selected={selected}
+      classNames={{
+        today: `border-amber-500`, // Add a border to today's date
+        day:`${defaultClassNames.day} p-4 hover:bg-gray-100`,
+        selected: `bg-green-500 border-amber-500 rounded-full text-white hover:bg-green-500`, // Highlight the selected day
+        root: `${defaultClassNames.root} p-10 w-full`, // Add a shadow to the root element
+        chevron: `  fill-[green]`, // Change the color of the chevron
+      }}
+      className='w-full'
+      onSelect={setSelected}
+      footer={
+        selected ? `Selected: ${selected.toLocaleDateString()}` : "Pick a day."
+      }
+    />
               </div>
               
               <div>
@@ -240,7 +239,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500"
                     value={clientDetails.email}
                     onChange={(e) => setClientDetails({...clientDetails, email: e.target.value})}
                   />
@@ -251,7 +250,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                   <input
                     type="tel"
                     placeholder="Enter your phone number"
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500"
                     value={clientDetails.phone}
                     onChange={(e) => setClientDetails({...clientDetails, phone: e.target.value})}
                   />
@@ -262,7 +261,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                   <input
                     type="text"
                     placeholder="Enter your address"
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500"
                     value={clientDetails.location}
                     onChange={(e) => setClientDetails({...clientDetails, location: e.target.value})}
                   />
@@ -271,7 +270,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                 <div>
                   <label className="block text-sm font-medium mb-1">Glam Style</label>
                   <select
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500"
                     value={clientDetails.glamStyle}
                     onChange={(e) => setClientDetails({...clientDetails, glamStyle: e.target.value})}
                   >
@@ -285,7 +284,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                 <div>
                   <label className="block text-sm font-medium mb-1">Skin Tone</label>
                   <select
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500"
                     value={clientDetails.skinTone}
                     onChange={(e) => setClientDetails({...clientDetails, skinTone: e.target.value})}
                   >
@@ -301,7 +300,7 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
                   <label className="block text-sm font-medium mb-1">Allergies/Sensitivities</label>
                   <textarea
                     placeholder="List any allergies or sensitivities"
-                    className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+                    className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500"
                     rows={3}
                     value={clientDetails.allergies}
                     onChange={(e) => setClientDetails({...clientDetails, allergies: e.target.value})}
@@ -358,18 +357,20 @@ const calendarDays = Array.from({ length: 30 }, (_, i) => ({
         <div className="w-full max-w-2xl">
           {bookingStep < 4 && renderStepIndicators()}
           {renderStep()}
-          {bookingStep < 4 && (
-            <div className="flex justify-between mt-8">
+          {bookingStep < 4 &&  (
+            <div className={`${bookingStep > 1?"justify-between": "justify-end-safe"} flex  mt-8`}>
+              {bookingStep >1&&(
               <button
                 onClick={handleBookingBack}
-                className="text-gray-600 hover:text-gray-800"
+                className="text-gray-600 hover:text-gray-800 cursor-pointer float-right"
               >
                 Back
               </button>
-              {bookingStep < 3 && (
+              )}
+              {bookingStep < 4 && (
                 <button
                   onClick={handleBookingNext}
-                  className="bg-green-500 text-white px-8 py-2 rounded-lg hover:bg-green-600"
+                  className="bg-green-500 text-white px-8 py-2 rounded-lg hover:bg-green-600 cursor-pointer"
                 >
                   Next
                 </button>

@@ -9,7 +9,7 @@ const ServicesPage = () => {
                     <h1 className="text-4xl font-bold mb-8">Services</h1>
 
                     <section className="mb-12">
-                        <h2 className="text-3xl font-bold mb-6">
+                        <h2 className="text-2xl font-bold mb-6">
                             Bridal Makeup
                         </h2>
                         <div className="bg-gray-50 rounded-lg p-6">
@@ -33,7 +33,7 @@ const ServicesPage = () => {
                     </section>
 
                     <section className="mb-12">
-                        <h2 className="text-3xl font-bold mb-6">
+                        <h2 className="text-2xl font-bold mb-6">
                             Special Occasion
                         </h2>
                         <div className="bg-gray-50 rounded-lg p-6">

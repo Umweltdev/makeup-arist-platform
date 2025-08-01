@@ -1,6 +1,6 @@
 import {Button} from "@/components/index"
 import { useState } from "react";
-import { DayPicker } from "react-day-picker";
+import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import "react-day-picker/style.css";
 
 interface Booking {
@@ -33,9 +33,10 @@ const bookingsData: Record<string, Booking[]> = {
   ],
 };
 const Bookings=()=>{
-    const [selectedDate, setSelectedDate] = useState("2024-07-05");
+    const [selectedDate,_setSelectedDate] = useState("2024-07-05");
     const [activeTab, setActiveTab] =useState("calendar")
     const [selected, setSelected] = useState<Date>();
+    const defaultClassNames = getDefaultClassNames();
   const bookings = bookingsData[selectedDate] || [];
     return(
         <div className="mb-2">
@@ -52,6 +53,13 @@ const Bookings=()=>{
              <DayPicker
       mode="single"
       selected={selected}
+       classNames={{
+        today: `border-amber-500`, // Add a border to today's date
+        day:`${defaultClassNames.day} p-4 hover:bg-gray-100`,
+        selected: `bg-green-500 border-amber-500 rounded-full text-white hover:bg-green-500`, // Highlight the selected day
+        root: `${defaultClassNames.root} p-10 w-full`, // Add a shadow to the root element
+        chevron: `  fill-[green]`, // Change the color of the chevron
+      }}
       onSelect={setSelected}
       footer={
         selected ? `Selected: ${selected.toLocaleDateString()}` : "Pick a day."
