@@ -74,9 +74,9 @@ button:focus-visible {
 
 
 .btn--primary {
-    @apply bg-[#13eb13] text-white hover:bg-green-600 px-8 py-4;
+    @apply bg-[#13eb13] text-white hover:bg-green-600 px-8 py-4 text-lg;
 }
 
 .btn--secondary {
-    @apply bg-[#e7f3e7]  text-[#111711] p-3;
+    @apply bg-[#e7f3e7]  text-[#111711] p-3 text-base;
 }

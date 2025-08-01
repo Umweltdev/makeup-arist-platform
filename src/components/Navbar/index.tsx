@@ -2,6 +2,7 @@ import { Menu, Sparkles, User} from 'lucide-react';
 import { useState } from 'react';
 import { NavLink, useNavigate } from "react-router";
 
+
 const Navbar=()=>{
     const navLinks = [
     { name: "Home", href: "/" },
