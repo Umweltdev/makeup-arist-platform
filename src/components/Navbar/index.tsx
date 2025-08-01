@@ -58,6 +58,13 @@ const Navbar=()=>{
           </div>
         </div>
       )}
+                  {/* Back to Client View Button */}
+            <button
+                onClick={() => navigate("/admin/dashboard")}
+                className="fixed top-12 right-4 bg-green-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 z-50"
+            >
+                Switch to Admin View
+            </button>
     </nav>
     )
 };
