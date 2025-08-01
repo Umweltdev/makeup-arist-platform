@@ -1,7 +1,4 @@
 import { Calendar, Palette, User, CreditCard, CalendarCheck, Home } from 'lucide-react';
-import { NavLink } from "react-router";
-import DashboardIcon from "./Sidebar/assets/dashboard"
-//import SettingsIcon from './assets/settin';
 
 
  export const navLinks = [

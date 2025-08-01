@@ -1,4 +1,4 @@
-import { X,  Camera, User } from 'lucide-react';
+import { X, User } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
 const About=()=>{
