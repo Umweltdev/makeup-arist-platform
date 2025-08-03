@@ -17,10 +17,10 @@ const Layout=({children}:{children: React.ReactNode})=>{
           <div className="flex justify-around py-2">
             {navLinks.map((nav, index)=>(
             
-                     <NavLink to={nav.href} key={index} className={({ isActive }) => `${isActive ?"bg-green-50 text-green-600":"hover:bg-gray-50"} flex flex-col items-center p-2 transition-colors  `}>
+                     <NavLink to={nav.href} key={index} className={({ isActive }) => `${isActive ?"bg-green-50 text-green-600":"hover:bg-gray-50"} flex flex-col items-center p-1 sm:p-2 transition-colors  `}>
                       {nav.icon}
                       
-                <span className="text-xs">{nav.name}</span>
+                <span className="text-[11px]">{nav.name}</span>
                 </NavLink>
                 
             ))}

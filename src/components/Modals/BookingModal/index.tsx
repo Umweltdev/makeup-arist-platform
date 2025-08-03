@@ -188,9 +188,9 @@ const [selected, setSelected] = useState<Date>();
       selected={selected}
       classNames={{
         today: `border-amber-500`, // Add a border to today's date
-        day:`${defaultClassNames.day} p-4 hover:bg-gray-100`,
+        day:`${defaultClassNames.day} sm:p-4 hover:bg-gray-100`,
         selected: `bg-green-500 border-amber-500 rounded-full text-white hover:bg-green-500`, // Highlight the selected day
-        root: `${defaultClassNames.root} p-10 w-full`, // Add a shadow to the root element
+        root: `${defaultClassNames.root} sm:p-10 w-full`, // Add a shadow to the root element
         chevron: `  fill-[green]`, // Change the color of the chevron
       }}
       className='w-full'
@@ -312,7 +312,7 @@ const [selected, setSelected] = useState<Date>();
         
         case 4:
           return (
-            <div>
+            <div className='mt-4'>
               <h2 className="text-2xl font-bold mb-8 text-center">Summary & Checkout</h2>
               
               <div className="bg-gray-50 rounded-lg p-6 mb-6">

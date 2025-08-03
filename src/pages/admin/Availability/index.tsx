@@ -36,10 +36,10 @@ const Availability=()=>{
                     <input type="time" name="endTime" className="border rounded-lg border-[#cfe7cf]  p-3" />
                 </div>
                 </div>
-                <p className="font-semibold text-xl my-4">Class/Event Slots</p>
+                <p className="font-semibold text-xl my-4 max-w-xl">Class/Event Slots</p>
                 <div className="flex flex-col mb-6">
                     <label className="mb-2">Event Name</label>
-                    <input type="date" name="day" className="border rounded-lg border-[#cfe7cf]  p-3 max-w-xl" />
+                    <input type="date" name="day" className="border rounded-lg border-[#cfe7cf]  p-3 " />
                 </div>
                 <div className="flex mt-4 max-w-xl gap-4 mb-6">
                     <div className="flex flex-col w-[50%]">
