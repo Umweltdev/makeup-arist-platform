@@ -111,6 +111,36 @@ const AdminDashboard = () => {
             <div className="block md:hidden">
                 <section className="mb-6">
                     <h2 className="text-xl font-bold mb-4">Upcoming</h2>
+                     {upcomingAppointments.map((apt) => (
+                        <div className="space-y-3 mb-6" key={apt.id}>
+                        <div className="flex items-center space-x-3">
+                            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                                <User size={24} className="text-gray-600" />
+                            </div>
+                            <div className="flex-1">
+                                <h3 className="font-semibold">{apt.client}</h3>
+                                <h3 className="text-[14px]">{apt.service}</h3>
+                                <p className="text-sm text-gray-500">
+                                    {apt.time}
+                                </p>
+                            </div>
+                            <div> 
+                                <p className=" pb-2 whitespace-nowrap">
+                                                {apt.date}</p>
+                            
+                                <p  className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                                    apt.status ===
+                                    "Confirmed"
+                                        ? "bg-green-100 text-green-800"
+                                        : "bg-yellow-100 text-yellow-800"
+                                }`}>
+                                {apt.status}
+                            </p>
+                            
+                            </div>
+                        </div>
+                        </div>
+                     ))}
                     <div className="space-y-3">
                         <div className="flex items-center space-x-3">
                             <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
@@ -141,32 +171,30 @@ const AdminDashboard = () => {
 
                 <section className="mb-6">
                     <h2 className="text-xl font-bold mb-4">Recent Bookings</h2>
-                    <div className="space-y-3">
+                     {recentBookings.map((booking) => (
+                    <div className="space-y-3 mb-3" key={booking.id}>
                         <div className="flex items-center space-x-3">
                             <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
                                 <User size={24} className="text-gray-600" />
                             </div>
                             <div className="flex-1">
-                                <h3 className="font-semibold">Bridal Makeup</h3>
+                                <h3 className="font-semibold">{booking.client}</h3>
+                                <h3 className="text-[14px]">{booking.service}</h3>
                                 <p className="text-sm text-gray-500">
-                                    10:00 AM - 11:00 AM
+                                    {booking.time}
                                 </p>
                             </div>
-                        </div>
-                        <div className="flex items-center space-x-3">
-                            <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                                <User size={24} className="text-gray-600" />
-                            </div>
-                            <div className="flex-1">
-                                <h3 className="font-semibold">
-                                    Photoshoot Makeup
-                                </h3>
-                                <p className="text-sm text-gray-500">
-                                    1:00 PM - 2:00 PM
-                                </p>
+                            <div>
+                                <p className=" pb-2 whitespace-nowrap text-sm">
+                                                {booking.date}</p>
+                                <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
+                                                {booking.status}</p>
+
                             </div>
                         </div>
+                        
                     </div>
+                    ))}
                 </section>
 
                 <section className="mb-6">
@@ -227,9 +255,9 @@ const AdminDashboard = () => {
             </div>
 
             {/* Desktop View - Hide on mobile */}
-            <div className="hidden md:block">
+            <div className="">
                 {/* Upcoming Section */}
-                <section className="mb-8">
+                <section className="mb-8 hidden md:block">
                     <h2 className="text-xl font-bold mb-4">Upcoming</h2>
                     <div className="bg-white rounded-lg shadow-sm">
                         <div className="flex space-x-1 p-4 border-b">
@@ -309,7 +337,7 @@ const AdminDashboard = () => {
                 </section>
 
                 {/* Recent Bookings */}
-                <section className="mb-8">
+                <section className="mb-8 hidden md:block">
                     <h2 className="text-xl font-bold mb-4">
                         Recent Bookings & Inquiries
                     </h2>
@@ -362,7 +390,7 @@ const AdminDashboard = () => {
                 </section>
 
                 {/* Daily/Weekly Snapshot */}
-                <section className="mb-8">
+                <section className="mb-8 hidden md:block">
                     <h2 className="text-xl font-bold mb-4">
                         Daily/Weekly Snapshot
                     </h2>
