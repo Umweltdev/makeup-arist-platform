@@ -1,10 +1,8 @@
 import { useState } from "react"
-import {  Camera } from "lucide-react"
+import { Camera } from "lucide-react"
 import { Navbar } from "@/components/index"
 
 const PortfolioPage = () => {
-    
-
     const portfolioImages = [
         { id: 1, category: "Bridal" },
         { id: 2, category: "Fashion" },
@@ -23,7 +21,6 @@ const PortfolioPage = () => {
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <div className="flex items-center justify-between mb-8">
                         <h1 className="text-4xl font-bold">Portfolio</h1>
-                        
                     </div>
 
                     <div className="flex space-x-6 mb-8">

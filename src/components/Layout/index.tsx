@@ -9,7 +9,7 @@ const Layout=({children}:{children: React.ReactNode})=>{
             <Sidebar/>
           </div>
             
-            <main className="flex-1 md:ml-64 p-6 mb-16 md:mb-0">
+            <main className="flex-1 md:ml-64 p-2 py-4 sm:p-6 mb-16 md:mb-0">
                 {children}
             </main>
              {/* Mobile Bottom Navigation for Admin */}

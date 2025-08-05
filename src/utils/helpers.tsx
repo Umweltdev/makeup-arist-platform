@@ -69,7 +69,7 @@ export const clients = [
         bookings: "1",
         lastActivity: "1 year ago",
     },
-];
+]
 
 export const transactionHistory = [
     {
@@ -77,34 +77,34 @@ export const transactionHistory = [
         client: "Sophia Clark",
         service: "Bridal Makeup",
         amount: "$250",
-        status: "Paid"
+        status: "Paid",
     },
     {
         date: "July 18, 2024",
         client: "Olivia Bennett",
         service: "Engagement Photoshoot",
         amount: "$150",
-        status: "Paid"
+        status: "Paid",
     },
     {
         date: "July 15, 2024",
         client: "Isabella Carter",
         service: "Special Event Makeup",
         amount: "$120",
-        status: "Paid"
+        status: "Paid",
     },
     {
         date: "July 12, 2024",
         client: "Ava Harper",
         service: "Makeup Lesson",
         amount: "$100",
-        status: "Paid"
+        status: "Paid",
     },
     {
         date: "July 10, 2024",
         client: "Mia Foster",
         service: "Bridal Makeup Trial",
         amount: "$100",
-        status: "Paid"
+        status: "Paid",
     },
-];
+]

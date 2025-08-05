@@ -9,13 +9,12 @@ interface buttonInterface
 
 const Button = ({ children, className, variant, ...rest }: buttonInterface) => {
     return (
-            <button
-                className={`    rounded-full  font-semibold hover:bg-green-600 transition-colors cursor-pointer btn--${variant} ${className}`}
-                {...rest}
-            >
-                {children}
-            </button>
-            
+        <button
+            className={`    rounded-full  font-semibold hover:bg-green-600 transition-colors cursor-pointer btn--${variant} ${className}`}
+            {...rest}
+        >
+            {children}
+        </button>
     )
 }
 

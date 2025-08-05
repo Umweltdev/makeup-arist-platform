@@ -5,5 +5,5 @@
 }
 
 .btn--secondary {
-    @apply bg-[#e7f3e7]  text-[#111711] ;
+    @apply bg-[#e7f3e7]  text-[#111711];
 }

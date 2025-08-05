@@ -1,4 +1,4 @@
-import { User, } from "lucide-react"
+import { User } from "lucide-react"
 
 const EventsTable = () => {
     const events = [
@@ -68,30 +68,35 @@ const EventsTable = () => {
                 </tbody>
             </table>
             <div className="block md:hidden">
-                            {events.map((event, index) => (
-                                <div key={index} className="flex space-x-3 justify-between items-center px-2 mb-4">
-                                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                                        <User size={24} className="text-gray-600" />
-                                    </div>
-                                         <div className="flex-1">
-                                            <h3 className="font-semibold">{event.name}</h3>
-                                            <h3 className="text-[14px]">{event.services}</h3>
-                                            <p className="text-sm text-gray-500">
-                                                {event.description} 
-                                            </p>
-                                        </div>
-                                        <div className=""> 
-                                            <p className=" pb-2 whitespace-nowrap">
-                                                {event.customPricing}</p>
-                                        
-                                            <p className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800`}>
-                                                {event.deposit}
-                                            </p>
-                                        
-                                        </div>
-                                </div> 
-                            ))}
+                {events.map((event, index) => (
+                    <div
+                        key={index}
+                        className="flex space-x-3 justify-between items-center px-2 mb-4"
+                    >
+                        <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                            <User size={24} className="text-gray-600" />
                         </div>
+                        <div className="flex-1">
+                            <h3 className="font-semibold">{event.name}</h3>
+                            <h3 className="text-[14px]">{event.services}</h3>
+                            <p className="text-sm text-gray-500">
+                                {event.description}
+                            </p>
+                        </div>
+                        <div className="">
+                            <p className=" pb-2 whitespace-nowrap">
+                                {event.customPricing}
+                            </p>
+
+                            <p
+                                className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800`}
+                            >
+                                {event.deposit}
+                            </p>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
