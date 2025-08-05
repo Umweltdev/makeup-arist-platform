@@ -1,5 +1,5 @@
 import { clients } from "@/utils/helpers"
-import { User } from "lucide-react"
+//gitimport { User } from "lucide-react"
 
 const ClientTable = () => {
     return (
