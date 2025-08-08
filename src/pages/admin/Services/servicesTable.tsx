@@ -19,7 +19,8 @@ const ServicesTable = () => {
     ]
     return (
         <div className="bg-white rounded-lg shadow-sm overflow-x-auto ">
-            <table className="w-full md:block hidden">
+             <div className="md:block hidden">
+            <table className="w-full ">
                 <thead className="bg-gray-50">
                     <tr>
                         <th className="px-6 py-3 text-left text-md font-medium text-gray-600  tracking-wider">
@@ -67,6 +68,7 @@ const ServicesTable = () => {
                     ))}
                 </tbody>
             </table>
+            </div>
             <div className="block md:hidden">
                 {services.map((service, index) => (
                     <div

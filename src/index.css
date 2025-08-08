@@ -74,9 +74,50 @@ button:focus-visible {
 
 
 .btn--primary {
-    @apply bg-[#13eb13] text-white hover:bg-green-600 px-8 py-4 text-lg;
+    @apply bg-[#13eb13] text-white hover:bg-green-600 px-8 py-4 text-base;
 }
 
 .btn--secondary {
     @apply bg-[#e7f3e7]  text-[#111711] p-3 text-base;
+}
+@media only screen and (max-width: 765px) {
+  .slick-dots {
+  bottom: 15px !important;
+  }
+}
+@media only screen and (min-width: 765px) {
+    .slick-dots {
+  bottom: 120px !important;
+  }
+}
+.slick-dots {
+  position: absolute;
+  
+/* bottom: 120px !important; */
+
+  z-index: 50 ;
+  /* color: white !important; */
+}
+
+.slick-prev{
+left:10px !important;
+}
+.slick-next {
+right: 10px !important;
+}
+.slick-prev,
+.slick-next {
+  z-index: 50;
+  color: blue;
+  font-size: 32px;
+  
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: white;
+    -webkit-font-smoothing: antialiased;
 }

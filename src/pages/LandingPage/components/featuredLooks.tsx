@@ -13,12 +13,16 @@ const FeaturedLooks = () => {
                         <h3 className="mt-4 font-semibold">
                             Glamorous Evening Look
                         </h3>
+                        <p className="">This shows the brief description</p> 
+                        <p className="text-sm">$400</p> 
                     </div>
                     <div className="text-center">
                         <div className="bg-gray-200 rounded-lg aspect-square mb-4 flex items-center justify-center">
                             <Camera size={60} className="text-gray-400" />
                         </div>
                         <h3 className="mt-4 font-semibold">Natural Day Look</h3>
+                         <p className="">This shows the brief description</p> 
+                         <p className="text-sm">$400</p> 
                     </div>
                     <div className="text-center">
                         <div className="bg-gray-200 rounded-lg aspect-square mb-4 flex items-center justify-center">
@@ -27,6 +31,8 @@ const FeaturedLooks = () => {
                         <h3 className="mt-4 font-semibold">
                             Bold and Edgy Look
                         </h3>
+                         <p className="">This shows the brief description</p> 
+                         <p className="text-sm">$400</p> 
                     </div>
                 </div>
             </div>

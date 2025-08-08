@@ -1,15 +1,18 @@
 import { useState } from "react"
-import { Camera } from "lucide-react"
+import { Camera, X } from "lucide-react"
 import { Navbar } from "@/components/index"
 
 const PortfolioPage = () => {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
     const portfolioImages = [
-        { id: 1, category: "Bridal" },
-        { id: 2, category: "Fashion" },
-        { id: 3, category: "Fashion" },
-        { id: 4, category: "Bridal" },
-        { id: 5, category: "Fashion" },
-        { id: 6, category: "Fashion" },
+        { id: 1, category: "Single" },
+        { id: 2, category: "Class" },
+        { id: 3, category: "Class" },
+        { id: 4, category: "Single" },
+        { id: 5, category: "Class" },
+        { id: 6, category: "Class" },
+        { id: 7, category: "Events" },
+        { id: 8, category: "Events" },
     ]
     const [activePortfolioCategory, setActivePortfolioCategory] =
         useState("All")
@@ -24,21 +27,23 @@ const PortfolioPage = () => {
                     </div>
 
                     <div className="flex space-x-6 mb-8">
-                        {["All", "Bridal", "Fashion"].map((category) => (
-                            <button
-                                key={category}
-                                onClick={() =>
-                                    setActivePortfolioCategory(category)
-                                }
-                                className={`text-lg font-medium pb-2 cursor-pointer ${
-                                    activePortfolioCategory === category
-                                        ? "text-green-500 border-b-2 border-green-500"
-                                        : "text-gray-600 hover:text-gray-800"
-                                }`}
-                            >
-                                {category}
-                            </button>
-                        ))}
+                        {["All", "Single", "Class", "Events"].map(
+                            (category) => (
+                                <button
+                                    key={category}
+                                    onClick={() =>
+                                        setActivePortfolioCategory(category)
+                                    }
+                                    className={`text-lg font-medium pb-2 cursor-pointer ${
+                                        activePortfolioCategory === category
+                                            ? "text-green-500 border-b-2 border-green-500"
+                                            : "text-gray-600 hover:text-gray-800"
+                                    }`}
+                                >
+                                    {category}
+                                </button>
+                            )
+                        )}
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
@@ -52,6 +57,10 @@ const PortfolioPage = () => {
                                 <div
                                     key={image.id}
                                     className="bg-gray-200 rounded-lg aspect-[3/4] flex items-center justify-center"
+                                    onClick={() =>
+                                        //setSelectedImage(image.fullSizeUrl)
+                                        setSelectedImage("new")
+                                    }
                                 >
                                     <Camera
                                         size={40}
@@ -62,6 +71,31 @@ const PortfolioPage = () => {
                     </div>
                 </div>
             </div>
+            {/* Lightbox Modal */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button
+                        className="absolute top-6 right-6 text-white"
+                        onClick={() => setSelectedImage(null)}
+                        aria-label="Close"
+                    >
+                        <X size={28} />
+                    </button>
+                    <Camera
+                        size={40}
+                        //className="text-gray-400"
+                        className="max-w-full max-h-[90vh] object-contain rounded shadow-lg"
+                    />
+                    {/* <img
+                        src={selectedImage}
+                        alt="Portfolio"
+                        className="max-w-full max-h-[90vh] object-contain rounded shadow-lg"
+                    /> */}
+                </div>
+            )}
         </div>
     )
 }

@@ -1,7 +1,17 @@
-import { Phone, Mail } from "lucide-react"
-import { Navbar } from "@/components/index"
+import { Navbar, Button } from "@/components/index"
+import { useState } from "react"
+import type { ContactFormInterface } from "../LandingPage/components/contact"
 
 const ContactPage = () => {
+    const [contactForm, setContactForm] = useState<ContactFormInterface>({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+            referenceImage: null,
+        })
+
     return (
         <div>
             <Navbar />
@@ -9,93 +19,127 @@ const ContactPage = () => {
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <div className="flex items-center justify-between mb-8">
                         <h1 className="text-4xl font-bold">Contact</h1>
+                        
                     </div>
 
-                    <div className="max-w-2xl mx-auto">
-                        <div className="space-y-6">
-                            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                                <Mail className="text-gray-600" size={24} />
-                                <div>
-                                    <p className="font-semibold">Email</p>
-                                    <p className="text-gray-600">
-                                        makeupartist@email.com
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                                <Phone className="text-gray-600" size={24} />
-                                <div>
-                                    <p className="font-semibold">Phone</p>
-                                    <p className="text-gray-600">
-                                        +1 (555) 123-4567
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    className="lucide lucide-instagram-icon lucide-instagram"
-                                >
-                                    <rect
-                                        width="20"
-                                        height="20"
-                                        x="2"
-                                        y="2"
-                                        rx="5"
-                                        ry="5"
-                                    />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line
-                                        x1="17.5"
-                                        x2="17.51"
-                                        y1="6.5"
-                                        y2="6.5"
-                                    />
-                                </svg>
-                                {/* <Instagram className="text-gray-600" size={24} /> */}
-                                <div>
-                                    <p className="font-semibold">Instagram</p>
-                                    <p className="text-gray-600">
-                                        @makeupartist
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
-                                {/* <Facebook className="text-gray-600" size={24} /> */}
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    className="lucide lucide-facebook-icon lucide-facebook"
-                                >
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                                </svg>
-                                <div>
-                                    <p className="font-semibold">Facebook</p>
-                                    <p className="text-gray-600">
-                                        @makeupartist
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="max-w-4xl mx-auto px-4 text-center min-h-screen bg-white pt-8">
+                <form className="space-y-6 mb-12">
+                    <div>
+                        <label className="block text-sm font-medium mb-2 text-left">
+                            Name
+                        </label>
+                        <input
+                            type="text"
+                            className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500 focus:border-transparent"
+                            value={contactForm.name}
+                            onChange={(e) =>
+                                setContactForm({
+                                    ...contactForm,
+                                    name: e.target.value,
+                                })
+                            }
+                            required
+                        />
                     </div>
+
+                    <div>
+                        <label className="block text-sm font-medium mb-2 text-left">
+                            Email
+                        </label>
+                        <input
+                            type="email"
+                            className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500 focus:border-transparent"
+                            value={contactForm.email}
+                            onChange={(e) =>
+                                setContactForm({
+                                    ...contactForm,
+                                    email: e.target.value,
+                                })
+                            }
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium mb-2 text-left">
+                            Phone
+                        </label>
+                        <input
+                            type="tel"
+                            className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500 focus:border-transparent"
+                            value={contactForm.phone}
+                            onChange={(e) =>
+                                setContactForm({
+                                    ...contactForm,
+                                    phone: e.target.value,
+                                })
+                            }
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium mb-2 text-left">
+                            Subject
+                        </label>
+                        <input
+                            type="text"
+                            className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                            value={contactForm.subject}
+                            onChange={(e) =>
+                                setContactForm({
+                                    ...contactForm,
+                                    subject: e.target.value,
+                                })
+                            }
+                        />
+                    </div>
+
+                    <div>
+                        <label className="block text-sm font-medium mb-2 text-left">
+                            Message
+                        </label>
+                        <textarea
+                            rows={4}
+                            className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500 focus:border-transparent"
+                            value={contactForm.message}
+                            onChange={(e) =>
+                                setContactForm({
+                                    ...contactForm,
+                                    message: e.target.value,
+                                })
+                            }
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium mb-2 text-left">
+                            Reference Image
+                        </label>
+                        <input
+                            type="file"
+                            className="w-full px-4 py-3 border border-1 rounded-lg focus:ring-0 focus:ring-green-500 focus:border-transparent"
+                            ///value={contactForm.referenceImage}
+                            onChange={(e) => {
+                                const file = e.target.files?.[0]
+                                if (file) {
+                                    setContactForm({
+                                        ...contactForm,
+                                        referenceImage: file,
+                                    })
+                                }
+                            }}
+                        />
+                    </div>
+                    <div className="flex">
+                        <Button
+                            variant="primary"
+                            className=""
+                            
+                        >
+                            Submit
+                        </Button>
+                    </div>
+                </form>
+            </div>
+                    
                 </div>
             </div>
         </div>

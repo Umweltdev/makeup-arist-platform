@@ -1,3 +1,6 @@
+import type { Service } from "@/types/service.type"
+import type { Booking } from "@/types/booking.type"
+
 export const clients = [
     {
         name: "Sophia Bennett",
@@ -107,4 +110,212 @@ export const transactionHistory = [
         amount: "$100",
         status: "Paid",
     },
+]
+
+export const servicesData: Service[] = [
+  {
+    id: "1",
+    title: "Bridal Makeup",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "single",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "2",
+    title: "Makeup Masterclass",
+    price: 120,
+    nextAvailable: "2025-08-13T10:00:00",
+    duration: "120 min",
+    images: ["/images/class.jpg"],
+    description: "Learn pro makeup techniques in a live class.",
+    category: "class",
+    tags: ["education", "hands-on", "group"]
+  },
+  {
+    id: "3",
+    title: "Special Occasion",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "event",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "4",
+    title: "Fashion",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "single",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "5",
+    title: "Natural",
+    price: 120,
+    nextAvailable: "2025-08-13T10:00:00",
+    duration: "120 min",
+    images: ["/images/class.jpg"],
+    description: "Learn pro makeup techniques in a live class.",
+    category: "class",
+    tags: ["education", "hands-on", "group"]
+  },
+  {
+    id: "6",
+    title: "Weddings",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "single",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "7",
+    title: "Makeup Masterclass",
+    price: 120,
+    nextAvailable: "2025-08-13T10:00:00",
+    duration: "120 min",
+    images: ["/images/class.jpg"],
+    description: "Learn pro makeup techniques in a live class.",
+    category: "class",
+    tags: ["education", "hands-on", "group"]
+  },
+  {
+    id: "8",
+    title: "Dewy",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "single",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "9",
+    title: "Glossy",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "class",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "10",
+    title: "Bright and bold",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "event",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "11",
+    title: "Edgy",
+    price: 120,
+    nextAvailable: "2025-08-13T10:00:00",
+    duration: "120 min",
+    images: ["/images/class.jpg"],
+    description: "Learn pro makeup techniques in a live class.",
+    category: "class",
+    tags: ["education", "hands-on", "group"]
+  },
+  {
+    id: "12",
+    title: "Clean",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "single",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  {
+    id: "13",
+    title: "Timeless",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "event",
+    tags: ["bridal", "natural", "HD makeup"]
+  },{
+    id: "14",
+    title: "No makeup makeup",
+    price: 350,
+    nextAvailable: "2025-08-12T14:00:00",
+    duration: "90 min",
+    images: ["/images/bridal.jpg", "/images/bridal2.jpg"],
+    description: "Includes consultation, trial, and day-of makeup.",
+    category: "event",
+    tags: ["bridal", "natural", "HD makeup"]
+  },
+  // more...
+]
+
+export const seed: Booking[] = [
+  {
+    id: "b1",
+    name: "Sophia Miller",
+    service: "Bridal Makeup",
+    type: "single",
+    time: "10:00 AM",
+    date: "2025-08-07",
+    status: "pending",
+    location: "Studio A",
+    paymentStatus: "unpaid",
+    image: "https://i.pravatar.cc/40?img=1",
+  },
+  {
+    id: "b2",
+    name: "Olivia Carter",
+    service: "Special Event Makeup",
+    type: "event",
+    time: "2:00 PM",
+    date: "2025-08-07",
+    status: "confirmed",
+    location: "Off-site",
+    paymentStatus: "paid",
+    image: "https://i.pravatar.cc/40?img=2",
+  },
+  {
+    id: "b3",
+    name: "Isabella Davis",
+    service: "Photoshoot Makeup",
+    type: "event",
+    time: "5:00 PM",
+    date: "2025-08-07",
+    status: "pending",
+    location: "Studio B",
+    paymentStatus: "unpaid",
+    image: "https://i.pravatar.cc/40?img=3",
+  },
+  {
+    id: "b4",
+    name: "Masterclass Group",
+    service: "Makeup Masterclass",
+    type: "class",
+    time: "11:00 AM",
+    date: "2025-08-12",
+    status: "confirmed",
+    location: "Classroom 1",
+    paymentStatus: "paid",
+    image: "https://i.pravatar.cc/40?img=5",
+  },
 ]

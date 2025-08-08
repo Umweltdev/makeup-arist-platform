@@ -4,7 +4,8 @@ import { User } from "lucide-react"
 const TransactionHistoryTable = () => {
     return (
         <div className="bg-white rounded-lg shadow-sm overflow-x-auto">
-            <table className="w-full hidden md:block">
+            <div className="md:block hidden">
+            <table className="w-full">
                 <thead className="bg-gray-50">
                     <tr>
                         <th className="px-6 py-3 text-left text-md font-medium text-gray-600  tracking-wider">
@@ -54,6 +55,7 @@ const TransactionHistoryTable = () => {
                     ))}
                 </tbody>
             </table>
+            </div>
             <div className="block md:hidden">
                 {transactionHistory.map((element, index) => (
                     <div
