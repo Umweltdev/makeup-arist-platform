@@ -48,7 +48,7 @@ const Contact = () => {
                         </label>
                         <input
                             type="text"
-                            className="w-full px-4 py-3 border rounded-lg focus:ring-0 focus:ring-green-500 focus:border-transparent"
+                            className="w-full px-4 py-3 border border-[#cfe7cf] rounded-lg focus:ring-0 focus:ring-green-500 focus:border-transparent"
                             value={contactForm.name}
                             onChange={(e) =>
                                 setContactForm({

@@ -23,12 +23,7 @@ const Portfolio = () => {
                         >
                             Single
                         </button>
-                        <button
-                            onClick={() => setActiveTab("classes")}
-                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "classes" ? "text-green-500 border-b-2 border-green-500" : "text-gray-600"}`}
-                        >
-                            Classes
-                        </button>
+                       
                         <button
                             onClick={() => setActiveTab("events")}
                             className={`pb-4 font-semibold cursor-pointer ${activeTab === "events" ? "text-green-500 border-b-2 border-green-500" : "text-gray-600"}`}
