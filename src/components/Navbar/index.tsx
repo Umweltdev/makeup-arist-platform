@@ -1,6 +1,7 @@
 import { Menu, Sparkles, User } from "lucide-react"
 import { useState } from "react"
 import { NavLink, useNavigate } from "react-router"
+import Button from "../Button"
 
 const Navbar = () => {
     const navLinks = [
@@ -41,7 +42,7 @@ const Navbar = () => {
                                 {nav.name}
                             </NavLink>
                         ))}
-
+                        <Button variant="secondary" className="py-2!" onClick={()=>navigate("/sign-in")}>Sign in</Button>
                         <button
                             onClick={() => navigate("/")}
                             className="text-gray-700 hover:text-gray-900"

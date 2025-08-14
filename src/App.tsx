@@ -19,6 +19,7 @@ import Payments from "./pages/admin/Payments"
 import Availability from "./pages/admin/Availability"
 import Bookings from "./pages/admin/Bookings"
 import ServiceDetailPage from "./pages/ServiceDetailPage.tsx"
+import SignIn from "./pages/SignIn/index.tsx"
 
 function App() {
     const AdminRoutes: React.FC = () => {
@@ -43,6 +44,7 @@ function App() {
                     path="/services/:category/:slug"
                     element={<ServiceDetailPage />}
                 />
+                <Route path="/sign-in" element={<SignIn />} />
                 <Route element={<AdminRoutes />}>
                     <Route
                         path="/admin/dashboard"
@@ -56,6 +58,7 @@ function App() {
                         element={<Availability />}
                     />
                     <Route path="/admin/bookings" element={<Bookings />} />
+                    
                 </Route>
             </Routes>
         </Router>
