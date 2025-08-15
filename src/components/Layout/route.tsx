@@ -6,6 +6,7 @@ import {
     CalendarCheck,
     Home,
 } from "lucide-react"
+import { MessagesSquare } from "lucide-react"
 
 export const navLinks = [
     {
@@ -68,5 +69,8 @@ export const navLinks = [
             />
         ),
     },
-    //{ name: "Settings", href: "/admin/settings", iconElement: SettingsIcon },
+    { name: "Inquiry", href: "/admin/inquiry", icon: <MessagesSquare
+                size={20}
+                className="w-6 md:w-auto h-6 md:h-auto mb-1 md:mb-0"
+            /> },
 ]

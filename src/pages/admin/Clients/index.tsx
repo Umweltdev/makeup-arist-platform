@@ -9,7 +9,7 @@ const Clients = () => {
     return (
         <div>
             <div className="flex justify-between items-center mb-8">
-                <h1 className="text-3xl font-bold">Clients</h1>
+                <h1 className="text-3xl font-bold text-green-600">Clients</h1>
                 <Button variant="secondary">Add Client</Button>
             </div>
             <div className="flex space-x-2 bg-[#eaf1ea] p-2 rounded-md mb-6">

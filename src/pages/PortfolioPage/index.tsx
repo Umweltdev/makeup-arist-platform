@@ -22,7 +22,7 @@ const PortfolioPage = () => {
             <Navbar />
             <div className="min-h-screen bg-white pt-20">
                 <div className="max-w-7xl mx-auto px-4 py-8">
-                    <div className="flex items-center justify-between mb-8">
+                    <div className="flex items-center justify-center mb-8">
                         <h1 className="text-4xl font-bold">Portfolio</h1>
                     </div>
 

@@ -58,7 +58,7 @@ const Bookings = () => {
     return (
         <div className="mb-2">
             <div className="flex justify-between items-center mb-8">
-                <h1 className="text-3xl font-bold">Bookings</h1>
+                <h1 className="text-3xl font-bold text-green-600">Bookings</h1>
                 <Button variant="secondary">New Booking</Button>
             </div>
             <div className="flex-1">

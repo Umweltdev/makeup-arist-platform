@@ -13,9 +13,9 @@ const Services = () => {
                 />
             )}
 
-            <h1 className="text-3xl font-bold mb-4">Services& Pricing</h1>
-            <div className="flex justify-between my-4">
-                <h2 className="text-2xl font-bold">Services</h2>
+            <h1 className="text-3xl font-bold mb-4 text-green-600">Services & Pricing</h1>
+            <div className="flex justify-between my-4 ">
+                <h2 className="text-2xl font-bold ">Services</h2>
                 <Button
                     variant="secondary"
                     onClick={() => setShowCreateServiceModal(true)}
