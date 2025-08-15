@@ -3,37 +3,15 @@ import { Button } from "@/components/index"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { X } from "lucide-react"
+import { CreateServiceFormInput } from "@/types/service.type"
 
-interface IFormInput {
-    serviceName: string
-    description: string
-    duration?: number
-    basePrice?: number
-    category?: string
-    preparation?: string
-    serviceType: string
-    pricePerPerson?: number
-    minParticipants?: number
-    maxParticipants?: number
-    materialsIncluded?: string
-    skillLevel?: string
-    classDate?: string
 
-    // Event-specific
-    eventType?: string
-    packageDetails?: string
-    teamSize?: number
-    deposit?: number
-    finalPayment?: string
-    travelRadius?: string
-    featured: false
-}
 const CreateServiceModal = ({ onClose }: { onClose: () => void }) => {
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<IFormInput>()
+    } = useForm<CreateServiceFormInput>()
     const [primaryImage, setPrimaryImage] = useState<File | null>(null)
     const [additionalImages, setAdditionalImages] = useState<File[]>([])
 

@@ -20,6 +20,7 @@ import Availability from "./pages/admin/Availability"
 import Bookings from "./pages/admin/Bookings"
 import ServiceDetailPage from "./pages/ServiceDetailPage.tsx"
 import SignIn from "./pages/SignIn/index.tsx"
+import Inquiry from "./pages/admin/Inquiry&Communications/index.tsx"
 
 function App() {
     const AdminRoutes: React.FC = () => {
@@ -58,6 +59,7 @@ function App() {
                         element={<Availability />}
                     />
                     <Route path="/admin/bookings" element={<Bookings />} />
+                    <Route path="/admin/inquiry" element={<Inquiry />} />
                     
                 </Route>
             </Routes>

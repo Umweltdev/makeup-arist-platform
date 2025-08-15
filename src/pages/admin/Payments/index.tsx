@@ -5,7 +5,7 @@ const Payments = () => {
     const [activeTab, setActiveTab] = useState("transactions")
     return (
         <div>
-            <h1 className="text-3xl font-bold">Payments & Reporting</h1>
+            <h1 className="text-3xl font-bold text-green-600">Payments & Reporting</h1>
             <div className="flex space-x-8 border-b my-8">
                 <button
                     onClick={() => setActiveTab("transactions")}
