@@ -5,6 +5,7 @@ import {
     CreditCard,
     CalendarCheck,
     Home,
+    LayoutGrid
 } from "lucide-react"
 import { MessagesSquare } from "lucide-react"
 
@@ -60,8 +61,8 @@ export const navLinks = [
         ),
     },
     {
-        name: "Payments",
-        href: "/admin/payments",
+        name: "Payment & Reporting",
+        href: "/admin/payments&reporting",
         icon: (
             <CreditCard
                 size={20}
@@ -73,4 +74,9 @@ export const navLinks = [
                 size={20}
                 className="w-6 md:w-auto h-6 md:h-auto mb-1 md:mb-0"
             /> },
+    
+    { name: "Content Management", href: "/admin/content-management", icon: <LayoutGrid
+                size={20}
+                className="w-6 md:w-auto h-6 md:h-auto mb-1 md:mb-0"
+            /> },                
 ]

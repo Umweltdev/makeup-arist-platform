@@ -102,7 +102,7 @@ const Bookings = () => {
                                     </span>
                                 )}
                             </div>
-                            {selectedDate &&
+                            {/* {selectedDate &&
                                 bookingsForSelectedDate.length === 0 && (
                                     <div className="mt-4">
                                         <button
@@ -113,7 +113,7 @@ const Bookings = () => {
                                             {format(selectedDate, "PPP")}
                                         </button>
                                     </div>
-                                )}
+                                )} */}
                         </div>{" "}
                         {/* Selected day list */}
                         <div>
