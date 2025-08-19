@@ -42,7 +42,7 @@ const Navbar = () => {
                                 {nav.name}
                             </NavLink>
                         ))}
-                        <Button variant="secondary" className="py-2!" onClick={()=>navigate("/sign-in")}>Sign in</Button>
+                        <Button variant="secondary" className="py-2!" onClick={()=>navigate("/signin")}>Sign in</Button>
                         <button
                             onClick={() => navigate("/")}
                             className="text-gray-700 hover:text-gray-900"

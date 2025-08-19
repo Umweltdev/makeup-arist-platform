@@ -5,8 +5,8 @@ import { navLinks } from "../route"
 
 const Sidebar = () => {
     return (
-        <aside className="w-64 bg-white h-screen fixed left-0 top-0 shadow-lg ">
-            <div className="p-6">
+        <aside className="w-64 bg-white h-full fixed left-0 top-0 shadow-lg">
+            <div className="p-6 pl-2">
                 <div className="flex items-center space-x-3 mb-8">
                     <div className="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center">
                         <User size={24} className="text-gray-600" />
@@ -17,7 +17,7 @@ const Sidebar = () => {
                     </div>
                 </div>
 
-                <nav className="space-y-2">
+                <nav className="space-y-2 ">
                     {navLinks.map((nav, index) => (
                         <NavLink
                             to={nav.href}

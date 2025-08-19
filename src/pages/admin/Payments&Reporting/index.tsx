@@ -1,11 +1,15 @@
 import { useState } from "react"
 import TransactionHistoryTable from "./transactionHistoryTable"
+import RevenueReports from "./revenueReports"
+import StripeSettings from "./stripeSettings"
 
-const Payments = () => {
+const PaymentsReporting = () => {
     const [activeTab, setActiveTab] = useState("transactions")
     return (
         <div>
-            <h1 className="text-3xl font-bold text-green-600">Payments & Reporting</h1>
+            <h1 className="text-3xl font-bold text-green-600">
+                Payments & Reporting
+            </h1>
             <div className="flex space-x-8 border-b my-8">
                 <button
                     onClick={() => setActiveTab("transactions")}
@@ -26,10 +30,21 @@ const Payments = () => {
                     Stripe Settings
                 </button>
             </div>
-            <h3 className="font-bold text-2xl my-4">Transaction History</h3>
-            <TransactionHistoryTable />
+            {activeTab === "transactions" && (
+                <div>
+                    {" "}
+                    <h3 className="font-bold text-2xl my-4">
+                        Transaction History
+                    </h3>
+                    <TransactionHistoryTable />{" "}
+                </div>
+            )}
+
+            {activeTab === "revenueReports" && <RevenueReports />}
+
+            {activeTab === "stripeSettings" && <StripeSettings />}
         </div>
     )
 }
 
-export default Payments
+export default PaymentsReporting
