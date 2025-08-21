@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Star, User, MessageCircle, Send, ThumbsUp } from "lucide-react"
-import { Navbar } from "@/components/index"
 
 const ClientInquiryPage = () => {
     const [inquiryForm, setInquiryForm] = useState({
@@ -14,7 +13,7 @@ const ClientInquiryPage = () => {
     const [message, setMessage] = useState("")
     return (
         <div>
-            <Navbar />
+        
             <div className="min-h-screen bg-white pt-20">
                 <div className="max-w-4xl mx-auto px-4 py-8">
                     <h1 className="text-3xl font-bold mb-8">Client Inquiry</h1>

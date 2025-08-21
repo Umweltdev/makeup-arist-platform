@@ -8,20 +8,20 @@ const Services = () => {
     const navigate= useNavigate()
 
     return (
-        <section className="py-16 bg-gray-50 mt-12">
+        <section className="py-16 bg-[#f8f4f2] pt-12">
             <div className="max-w-7xl mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8">Services & Pricing</h2>
+                <h2 className="text-3xl font-bold mb-8 text-[#3F6C54]">Services & Pricing</h2>
                 <div className="mb-8">
                     <div className="flex space-x-8 border-b">
                         <button
                             onClick={() => setActiveTab("classes")}
-                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "classes" ? "text-green-500 border-b-2 border-green-500" : "text-gray-600"}`}
+                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "classes" ? "text-[#3F6C54] border-b-2 border-[#3F6C54]" : "text-[#799885]"}`}
                         >
                             Classes
                         </button>
                         <button
                             onClick={() => setActiveTab("events")}
-                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "events" ? "text-green-500 border-b-2 border-green-500" : "text-gray-600"}`}
+                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "events" ? "text-[#3F6C54] border-b-2 border-[#3F6C54]" : "text-[#799885]"}`}
                         >
                             Events
                         </button>

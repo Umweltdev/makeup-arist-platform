@@ -1,4 +1,4 @@
-import { Navbar, Button } from "@/components/index"
+import { Button } from "@/components/index"
 import { useState } from "react"
 import { InquiryFormInput } from "@/types/inquiry.type"
 import { useForm } from "react-hook-form"
@@ -32,11 +32,11 @@ const ContactPage = () => {
     }
     return (
         <div>
-            <Navbar />
-            <div className="min-h-screen bg-white pt-20">
+            
+            <div className="min-h-screen bg-[#f8f4f2] pt-20">
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <div className="flex items-center justify-center mb-8">
-                        <h1 className="text-4xl font-bold">Contact Us</h1>
+                        <h1 className="text-4xl font-bold text-[#3F6C54]">Contact Us</h1>
                     </div>
 
                     <div className="max-w-4xl mx-auto px-4 text-center min-h-screen bg-white pt-8">

@@ -31,14 +31,14 @@ const Contact = () => {
     }
 
     return (
-        <section className="py-16 bg-white mt-12">
+        <section className="py-16 bg-[#3F6C54] pt-12">
             {showInquiryModal && (
             <ClientInquiryModal onClose={() => setShowInquiryModal(false)}/>)}
             <div className="max-w-4xl mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold mb-8">Contact</h2>
+                <h2 className="text-3xl font-bold mb-8 text-white">Contact</h2>
                 
                
-                <form className="space-y-6 mb-12" onSubmit={(e) => {
+                <form className="space-y-6 mb-12 text-[#DBC8BC]" onSubmit={(e) => {
                         e.preventDefault()
                         handleSubmit()
                     }}>
@@ -148,7 +148,7 @@ const Contact = () => {
                     </div>
                     <div className="flex">
                         <Button
-                            variant="primary"
+                            variant="secondary"
                             className=""
                             
                         >

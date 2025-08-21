@@ -3,7 +3,11 @@ import { servicesData } from "@/utils/helpers"
 import { Helmet } from "react-helmet"
 import { format } from "date-fns"
 import { Camera } from "lucide-react"
-import { Navbar, ServiceBookingModal, CheckoutModal } from "@/components/index"
+import {
+    //Navbar,
+    ServiceBookingModal,
+    CheckoutModal,
+} from "@/components/index"
 import { useState } from "react"
 
 const ServiceDetailPage = () => {
@@ -20,7 +24,7 @@ const ServiceDetailPage = () => {
 
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
             {bookingModal && (
                 <ServiceBookingModal
                     onClose={() => setBookingModal(false)}

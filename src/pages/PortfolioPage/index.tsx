@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Camera, X } from "lucide-react"
-import { Navbar } from "@/components/index"
 
 const PortfolioPage = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null)
@@ -19,11 +18,11 @@ const PortfolioPage = () => {
 
     return (
         <div>
-            <Navbar />
-            <div className="min-h-screen bg-white pt-20">
+            
+            <div className="min-h-screen bg-[#f8f4f2] pt-20">
                 <div className="max-w-7xl mx-auto px-4 py-8">
                     <div className="flex items-center justify-center mb-8">
-                        <h1 className="text-4xl font-bold">Portfolio</h1>
+                        <h1 className="text-4xl font-bold text-[#3F6C54]">Portfolio</h1>
                     </div>
 
                     <div className="flex space-x-6 mb-8">
@@ -36,8 +35,8 @@ const PortfolioPage = () => {
                                     }
                                     className={`text-lg font-medium pb-2 cursor-pointer ${
                                         activePortfolioCategory === category
-                                            ? "text-green-500 border-b-2 border-green-500"
-                                            : "text-gray-600 hover:text-gray-800"
+                                            ? "text-[#3F6C54] border-b-2 border-[#3F6C54]"
+                                            : "text-gray-400 hover:text-gray-800"
                                     }`}
                                 >
                                     {category}

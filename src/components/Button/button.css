@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
 .btn--primary {
-    @apply bg-green-500 text-white hover:bg-green-600;
+    @apply bg-[#3F6C54] text-white hover:bg-[#527B62];
 }
 
 .btn--secondary {
-    @apply bg-[#e7f3e7]  text-[#111711];
+    @apply bg-[#ECF0EE]  text-[#3F6C54] hover:bg-[#D9E2DC] px-4;
 }
+
+.btn--beaver {
+    @apply bg-[#B6917A] text-white hover:bg-[#BD9C87] p-2;
+}
+.btn--border {
+    @apply border-[#ECF0EE] text-[#ECF0EE] border-1 hover:bg-[#527B62] p-2  px-4;
+}
+

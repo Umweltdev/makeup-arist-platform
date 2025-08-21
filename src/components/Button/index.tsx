@@ -4,7 +4,7 @@ interface buttonInterface
     extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode
     className?: string
-    variant?: "primary" | "secondary"
+    variant?: "primary" | "secondary"|'beaver'|'border'
 }
 
 const Button = ({ children, className, variant, ...rest }: buttonInterface) => {

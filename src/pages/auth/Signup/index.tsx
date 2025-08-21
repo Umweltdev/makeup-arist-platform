@@ -1,9 +1,9 @@
-import { Button, Navbar } from "@/components/index"
-import { Link } from "react-router-dom"
+import { Button, Modal } from "@/components/index"
+
 import { useState, FormEvent } from "react"
 import { useNavigate } from "react-router-dom"
 
-const SignUp = () => {
+const SignUp = ({ onClose, setSigninModal }: { onClose: () => void, setSigninModal:(val:boolean)=>void }) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
@@ -14,12 +14,11 @@ const SignUp = () => {
     }
 
     return (
-        <div>
-            <Navbar />
-            <div className="max-w-2xl text-center mb-12 pt-24 md:pt-30 flex justify-center flex-col mx-auto">
-                <h1 className=" font-semibold text-[32px] leading-[40px] md:text-[46.4px] md:leading-[56px]">
+        <Modal onClose={onClose}>
+            {/* <Navbar /> */}
+            <div className="max-w-2xl text-center mb-12 pt-4 flex justify-center flex-col mx-auto">
+                <h1 className=" font-semibold text-[32px] leading-[40px] md:text-[42.4px] md:leading-[50px] text-[#3F6C54]">
                     Create Your Account
-        
                 </h1>
                 <p className="font-dmSans font-bold text-[16px] leading-[24px] md:text-[19.3339px] md:leading-[150%] text-[#2D3142] my-4">
                     Sign up to explore to access your dashboard.
@@ -54,6 +53,7 @@ const SignUp = () => {
                             className="w-full bg-[#e7f3e7] border border-gray-300 rounded-[23px] px-4 py-3 text-sm md:text-base font-dmSans"
                         />
                     </div>
+
                     <Button
                         type="submit"
                         variant="primary"
@@ -62,18 +62,20 @@ const SignUp = () => {
                         Sign up
                     </Button>
                 </form>
-
+                
+                    
                 <div className="mt-6 text-sm md:text-base text-[#2D3142]">
                     Already have an account?{" "}
-                    <Link
-                        to="/signin"
-                        className="text-[#2A9D8F] font-semibold hover:underline text-green-600"
+                    <button
+                        
+                        onClick={() => {onClose(); setSigninModal(true)}}
+                        className="text-[#2A9D8F] font-semibold hover:underline text-[#668974] cursor-pointer"
                     >
                         Log In
-                    </Link>
+                    </button>
                 </div>
             </div>
-        </div>
+        </Modal>
     )
 }
 

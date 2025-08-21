@@ -1,32 +1,36 @@
 import { Camera } from "lucide-react"
 import { Button } from "@/components/index"
-import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
-const Portfolio = () => {
-    const navigate = useNavigate()
-    const [activeTab, setActiveTab] = useState("all")
+const Portfolio = ({
+    setActivePage,
+    
+}: {
+    setActivePage: React.Dispatch<React.SetStateAction<string>>
+    
+}) => {
+    const [activeTab, setActiveTab] = useState("class")
     return (
-        <section className="py-16 bg-white mt-12">
+        <section className="py-16 bg-[#3F6C54] pt-12">
             <div className="max-w-7xl mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8">Portfolio</h2>
-                <div className="flex space-x-8 border-b">
+                <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
+                <div className="flex space-x-8 border-b border-white">
                   <button
-                            onClick={() => setActiveTab("all")}
-                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "all" ? "text-green-500 border-b-2 border-green-500" : "text-gray-600"}`}
+                            onClick={() => setActiveTab("class")}
+                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "class" ? "text-[#CCB2A2] border-b-2 border-[#CCB2A2]" : "text-white"}`}
                         >
                             Classes
                         </button>
                         <button
                             onClick={() => setActiveTab("single")}
-                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "single" ? "text-green-500 border-b-2 border-green-500" : "text-gray-600"}`}
+                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "single" ? "text-[#CCB2A2] border-b-2 border-[#CCB2A2]" : "text-white"}`}
                         >
                             Single
                         </button>
                        
                         <button
                             onClick={() => setActiveTab("events")}
-                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "events" ? "text-green-500 border-b-2 border-green-500" : "text-gray-600"}`}
+                            className={`pb-4 font-semibold cursor-pointer ${activeTab === "events" ? "text-[#CCB2A2] border-b-2 border-[#CCB2A2]" : "text-white"}`}
                         >
                             Events
                         </button>
@@ -45,8 +49,8 @@ const Portfolio = () => {
             </div>
             <div className="flex justify-center mt-4">
                 <Button
-                    variant="primary"
-                    onClick={() => navigate("/portfolio")}
+                    variant="secondary"
+                    onClick={() => setActivePage("Porfolio")}
                 >
                     View full Portfolio
                 </Button>

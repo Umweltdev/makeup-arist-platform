@@ -18,11 +18,11 @@ import Services from "./pages/admin/Services"
 import Availability from "./pages/admin/Availability"
 import Bookings from "./pages/admin/Bookings"
 import ServiceDetailPage from "./pages/ServiceDetailPage.tsx"
-import SignIn from "./pages/SignIn/index.tsx"
+
 import Inquiry from "./pages/admin/Inquiry&Communications/index.tsx"
 import PaymentsReporting from "./pages/admin/Payments&Reporting/index.tsx"
 import ContentManagement from "./pages/admin/ContentManagement/index.tsx"
-import SignUp from "./pages/Signup/index.tsx"
+
 
 function App() {
     const AdminRoutes: React.FC = () => {
@@ -47,8 +47,7 @@ function App() {
                     path="/services/:category/:slug"
                     element={<ServiceDetailPage />}
                 />
-                <Route path="/signin" element={<SignIn />} />
-                <Route path="/signup" element={<SignUp />} />
+                
                 <Route element={<AdminRoutes />}>
                     <Route
                         path="/admin/dashboard"
@@ -62,9 +61,14 @@ function App() {
                     />
                     <Route path="/admin/bookings" element={<Bookings />} />
                     <Route path="/admin/inquiry" element={<Inquiry />} />
-                    <Route path="/admin/payments&reporting" element={<PaymentsReporting />} />
-                    <Route path="/admin/content-management" element={<ContentManagement />} />
-                    
+                    <Route
+                        path="/admin/payments&reporting"
+                        element={<PaymentsReporting />}
+                    />
+                    <Route
+                        path="/admin/content-management"
+                        element={<ContentManagement />}
+                    />
                 </Route>
             </Routes>
         </Router>
