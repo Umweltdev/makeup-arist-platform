@@ -2,6 +2,7 @@ import {
     Menu,
     Sparkles,
     //User
+    X
 } from "lucide-react"
 import { useState } from "react"
 import { useNavigate } from "react-router"
@@ -101,10 +102,10 @@ const Navbar = ({
                         </button> */}
                     </div>
                     <button
-                        className="md:hidden cursor-pointer"
+                        className="md:hidden cursor-pointer text-white"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
-                        <Menu size={24} />
+                        {mobileMenuOpen ? (<X size={24}/>):(<Menu size={24} />)}
                     </button>
                 </div>
             </div>

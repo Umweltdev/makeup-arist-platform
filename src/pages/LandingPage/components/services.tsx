@@ -10,7 +10,7 @@ const Services = () => {
     return (
         <section className="py-16 bg-[#f8f4f2] pt-12">
             <div className="max-w-7xl mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8 text-[#3F6C54]">Services & Pricing</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#3F6C54]">Services & Pricing</h2>
                 <div className="mb-8">
                     <div className="flex space-x-8 border-b">
                         <button

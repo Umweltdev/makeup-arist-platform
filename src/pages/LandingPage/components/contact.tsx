@@ -35,7 +35,7 @@ const Contact = () => {
             {showInquiryModal && (
             <ClientInquiryModal onClose={() => setShowInquiryModal(false)}/>)}
             <div className="max-w-4xl mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold mb-8 text-white">Contact</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-8 text-white">Contact</h2>
                 
                
                 <form className="space-y-6 mb-12 text-[#DBC8BC]" onSubmit={(e) => {

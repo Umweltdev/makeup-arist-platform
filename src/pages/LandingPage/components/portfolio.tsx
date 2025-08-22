@@ -13,7 +13,7 @@ const Portfolio = ({
     return (
         <section className="py-16 bg-[#3F6C54] pt-12">
             <div className="max-w-7xl mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8 text-white">Portfolio</h2>
+                <h2 className="text-2xl md:text-3xl font-bold mb-8 text-white">Portfolio</h2>
                 <div className="flex space-x-8 border-b border-white">
                   <button
                             onClick={() => setActiveTab("class")}
@@ -50,7 +50,7 @@ const Portfolio = ({
             <div className="flex justify-center mt-4">
                 <Button
                     variant="secondary"
-                    onClick={() => setActivePage("Porfolio")}
+                    onClick={() => setActivePage("Portfolio")}
                 >
                     View full Portfolio
                 </Button>

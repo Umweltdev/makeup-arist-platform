@@ -47,7 +47,8 @@ const HeroSection=()=>{
             <CheckoutModal onClose={()=>setCheckoutModal(false)}/>
           )}
           {/* <img src={Image1} alt="" /> */}
-          <div className="h-[400p sm:h-[400px] md:h-screen overflow-hidden w-full bg-[#3F6C54]" >
+          <div className="h-[400p  h-screen overflow-hidden w-full bg-[#3F6C54]" >
+            {/* sm:h-[400px] */}
                 <Slider {...sliderSettings}>
                     {images.map((src, index) => (
                         <div key={index}>
@@ -56,15 +57,16 @@ const HeroSection=()=>{
                                 alt={`Slide ${index + 1}`}
                                 // width={1200}
                                 // height={400}
-                                className="w-full object-cover h-[450px] sm:h-[400px] md:h-screen object-cover object-center" 
+                                className="w-full object-cover  md:h-screen object-cover object-center" 
                             />
+                            {/* h-[450px] sm:h-[400px] */}
                         </div>
                     ))}
                 </Slider>
             </div>
         <div className="absolute h-screen  inset-0 bg-gradient-to-r from-black/60 to-black/40 " />
         <div className="bg-[#f8f4f2]  bottom-10 z-10 text-center text-[#3F6C54] px-4  mx-auto pb-10">
-          <h1 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-6 md:pt-10 ">
+          <h1 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-6 pt-10 ">
             Elevate Your Beauty with Expert Makeup Artistry
           </h1>
           <p className="text-base sm:text-xl mb-8  mx-auto px-16">
