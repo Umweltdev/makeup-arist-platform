@@ -13,13 +13,13 @@ const ForgetPassword = ({ onClose, setSignupModal }: { onClose: () => void, setS
         <Modal onClose={onClose}  >
             
             <div className="max-w-2xl text-center mb-12 pt-4 flex justify-center flex-col mx-auto">
-                <h1 className=" font-semibold text-[32px] leading-[40px] md:text-[42.4px] md:leading-[50px] text-[#3F6C54]">
+                <h1 className=" font-semibold text-[28px] sm:text-[32px] leading-[32px] md:text-[40.4px] md:leading-[40px] text-[#3F6C54]">
                     Reset Password
                 </h1>
-                <p className="font-dmSans font-bold text-[16px] leading-[24px] md:text-[19.3339px] md:leading-[150%] text-[#2D3142] my-4">
+                <p className=" font-bold text-[16px] leading-[24px] md:text-[19.3339px] md:leading-[150%] text-[#2D3142] my-4">
                     Enter your account E-mail to set a new password
                 </p>
-                <form className="bg-white rounded-[32px] shadow-md p-6 md:p-8 w-full max-w-md mx-auto" onSubmit={handleSubmit}>
+                <form className="bg-white rounded-[32px] shadow-md px-4 py-6 md:p-8 w-full max-w-md mx-auto" onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <input
                             type="email"

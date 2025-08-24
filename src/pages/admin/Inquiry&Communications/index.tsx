@@ -24,7 +24,7 @@ const inquiriesMock = [
 const Inquiry=()=>{
     return(
        <div className="">
-        <h1 className="text-3xl font-bold mb-4 text-green-600">Inquiry & Communications</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-4 text-green-600">Inquiry & Communications</h1>
         {inquiriesMock.map((item, index)=>(
             <InquiryCard
                 key={index}

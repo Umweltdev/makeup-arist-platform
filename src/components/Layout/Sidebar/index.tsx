@@ -23,7 +23,7 @@ const Sidebar = () => {
                             to={nav.href}
                             key={index}
                             className={({ isActive }) =>
-                                `${isActive ? "bg-green-50 text-green-600" : "hover:bg-gray-50"} w-full flex items-center space-x-4 gap-2 px-4 py-3 rounded-lg transition-colors  `
+                                `${isActive ? "bg-green-100 text-green-1000" : "hover:bg-gray-50"} w-full flex items-center space-x-4 gap-2 px-4 py-3 rounded-lg transition-colors  `
                             }
                         >
                             {nav.icon}

@@ -15,12 +15,12 @@ const Layout=({children}:{children: React.ReactNode})=>{
              {/* Mobile Bottom Navigation for Admin */}
         <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t">
           <div className="flex justify-around py-2">
-            {navLinks.slice(0,7).map((nav, index)=>(
+            {navLinks.map((nav, index)=>(
             
-                     <NavLink to={nav.href} key={index} className={({ isActive }) => `${isActive ? "bg-green-50 text-green-600":"hover:bg-gray-50"} flex flex-col items-center p-1 sm:p-2 transition-colors  `}>
+                     <NavLink to={nav.href} key={index} className={({ isActive }) => `${isActive ? "bg-green-100 text-green-1000":"hover:bg-gray-50"} flex flex-col items-center p-1 sm:p-2 transition-colors  `}>
                       {nav.icon}
                       
-                <span className="text-[11px]">{nav.name}</span>
+                {/* <span className="text-[11px]">{nav.name}</span> */}
                 </NavLink>
                 
             ))}

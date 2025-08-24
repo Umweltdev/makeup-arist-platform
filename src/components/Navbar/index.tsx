@@ -1,6 +1,6 @@
 import {
     Menu,
-    Sparkles,
+    
     //User
     X
 } from "lucide-react"
@@ -10,6 +10,7 @@ import Button from "../Button"
 import SignIn from "@/pages/auth/SignIn"
 import SignUp from "@/pages/auth/Signup"
 import ForgetPassword from "@/pages/auth/ForgetPassword"
+import Logo from "@/assets/icons/BrandIcon.svg"
 
 const Navbar = ({
     setActivePage,
@@ -63,8 +64,9 @@ const Navbar = ({
                         className="flex items-center cursor-pointer"
                         onClick={() => navigate("/")}
                     >
-                        <Sparkles className="h-6 w-6 mr-2" />
-                        <span className="text-xl font-bold">Glamify</span>
+                        {/* <Sparkles className="h-6 w-6 mr-2" /> */}
+                        <img src={Logo} alt="Brand logo" className="h-6 w-6 mr-2" />
+                        <span className="text-xl font-bold text-[#BD9C87]">Shay Beauty</span>
                     </div>
                     <div className="hidden md:flex space-x-8 items-center">
                         {navLinks.map((nav, index) => (
@@ -83,7 +85,7 @@ const Navbar = ({
                         <Button
                             variant="border"
                             className="py-2!"
-                            onClick={() => setSigninModal(true)}
+                            onClick={() => setSignupModal(true)}
                         >
                             Sign up
                         </Button>
@@ -148,7 +150,7 @@ const Navbar = ({
             {/* Back to Client View Button */}
             <button
                 onClick={() => navigate("/admin/dashboard")}
-                className="fixed top-12 right-4 bg-green-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 z-50"
+                className="fixed top-12 right-4 bg-green-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 z-20"
             >
                 Switch to Admin View
             </button>

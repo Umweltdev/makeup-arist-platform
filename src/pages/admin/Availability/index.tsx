@@ -3,7 +3,7 @@ import { Button } from "@/components/index"
 const Availability = () => {
     return (
         <div>
-            <h1 className="text-3xl font-bold text-green-600">Availability Management</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-green-600">Availability Management</h1>
             <p className="text-[#679067] my-4">
                 Manage your weekly working hours , block out dates/time for
                 unavailability, and manage class event shots

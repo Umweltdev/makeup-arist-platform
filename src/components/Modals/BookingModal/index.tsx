@@ -474,7 +474,7 @@ const BookingModal = ({
 
                         <button
                             onClick={setOpenCheckout}
-                            className="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition-colors text-lg font-medium"
+                            className="w-full bg-green-1000 text-white py-3 rounded-lg hover:bg-green-600 transition-colors text-lg font-medium"
                         >
                             Book Now
                         </button>
@@ -506,7 +506,7 @@ const BookingModal = ({
                         {bookingStep < 4 && (
                             <button
                                 onClick={handleBookingNext}
-                                className="bg-green-500 text-white px-8 py-2 rounded-lg hover:bg-green-600 cursor-pointer"
+                                className="bg-green-1000 text-white px-8 py-2 rounded-lg hover:bg-green-600 cursor-pointer"
                             >
                                 Next
                             </button>

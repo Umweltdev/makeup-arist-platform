@@ -16,7 +16,7 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   @apply font-Montserrat;
  
-}font-mitchaella
+}
 
 
 input[type="text"], input[type="number"], input[type="email"], textarea, select, input{
@@ -33,12 +33,12 @@ input[type="text"], input[type="number"], input[type="email"], textarea, select,
 }
 @media only screen and (max-width: 765px) {
   .slick-dots {
-  bottom: 15px !important;
+  bottom: 20px !important;
   }
 }
 @media only screen and (min-width: 765px) {
     .slick-dots {
-  bottom: 120px !important;
+  bottom: 20px !important;
   }
 }
 .slick-dots {
@@ -50,9 +50,9 @@ input[type="text"], input[type="number"], input[type="email"], textarea, select,
   /* color: white !important; */
 }
 
-.slick-prev{
+/* .slick-prev{
 left:10px !important;
-}
+} */
 .slick-next {
 right: 10px !important;
 }

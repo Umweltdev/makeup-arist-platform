@@ -1,5 +1,5 @@
 export { default as Button } from "./Button"
-export { default as Input } from "./Modals/BookingModal"
+export { default as Input } from "./Input"
 export { default as CheckoutModal } from "./Modals/CheckoutModal"
 export { default as BookingModal } from "./Modals/BookingModal"
 export { default as ClientInquiryModal } from "./Modals/ClientInquiryModal"
