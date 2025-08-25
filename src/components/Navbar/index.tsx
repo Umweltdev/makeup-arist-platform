@@ -10,7 +10,7 @@ import Button from "../Button"
 import SignIn from "@/pages/auth/SignIn"
 import SignUp from "@/pages/auth/Signup"
 import ForgetPassword from "@/pages/auth/ForgetPassword"
-import Logo from "@/assets/icons/BrandIcon.svg"
+import Logo from "@/assets/icons/logo.svg"
 
 const Navbar = ({
     setActivePage,
@@ -37,7 +37,7 @@ const Navbar = ({
 
     const navigate = useNavigate()
     return (
-        <nav className="fixed top-0 w-full bg-[#3F6C54] z-40 shadow-sm">
+        <nav className="fixed top-0 w-full bg-[#3F6C54] z-40 shadow-sm ">
             {openSigninModal && (
                 <SignIn
                     onClose={() => setSigninModal(false)}
@@ -59,14 +59,14 @@ const Navbar = ({
             )}
 
             <div className="max-w-7xl mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
+                <div className="flex justify-between items-center h-18">
                     <div
                         className="flex items-center cursor-pointer"
                         onClick={() => navigate("/")}
                     >
                         {/* <Sparkles className="h-6 w-6 mr-2" /> */}
-                        <img src={Logo} alt="Brand logo" className="h-6 w-6 mr-2" />
-                        <span className="text-xl font-bold text-[#BD9C87]">Shay Beauty</span>
+                        <img src={Logo} alt="Brand logo" className="h-20 sm:h-20 w-22 sm:w-22 mr-2" />
+                        {/* <span className="text-xl font-bold text-[#BD9C87]">Shay Beauty</span> */}
                     </div>
                     <div className="hidden md:flex space-x-8 items-center">
                         {navLinks.map((nav, index) => (
@@ -107,7 +107,7 @@ const Navbar = ({
                         className="md:hidden cursor-pointer text-white"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
-                        {mobileMenuOpen ? (<X size={24}/>):(<Menu size={24} />)}
+                        {mobileMenuOpen ? (<X size={24} color="#BD9C87" />):(<Menu size={24} color="#BD9C87" />)}
                     </button>
                 </div>
             </div>
@@ -150,7 +150,7 @@ const Navbar = ({
             {/* Back to Client View Button */}
             <button
                 onClick={() => navigate("/admin/dashboard")}
-                className="fixed top-12 right-4 bg-green-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 z-20"
+                className="fixed top-16 right-4 bg-green-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-600 z-20"
             >
                 Switch to Admin View
             </button>

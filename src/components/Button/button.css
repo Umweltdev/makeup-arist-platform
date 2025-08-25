@@ -1,3 +1,4 @@
+@config "../../../tailwind.config.ts";
 @import "tailwindcss";
 
 .btn--primary {
@@ -11,7 +12,12 @@
 .btn--beaver {
     @apply bg-[#B6917A] text-white hover:bg-[#BD9C87] p-2;
 }
+.btn--beaver2 {
+    @apply bg-beaver-100 text-[#B6917A] hover:bg-[#BD9C87] p-2;
+}
 .btn--border {
     @apply border-[#ECF0EE] text-[#ECF0EE] border-1 hover:bg-[#527B62] p-2  px-4;
 }
-
+.btn--border2 {
+    @apply border-[#B6917A] text-[#B6917A] border-1 hover:bg-[#527B62] p-2  px-4;
+}

@@ -39,7 +39,7 @@ const HeroSection=()=>{
 
     return(
       
-        <section className="relative  md:h-full  ">
+        <section className="relative  md:h-full  mt-16">
           {/* h-screen flex items-center justify-center bg-gray-90 */}
           {bookingModal &&(
             <BookingModal onClose={()=>setBookingModal(false)} setOpenCheckout={()=>{setBookingModal(false); setCheckoutModal(true)}}/>
@@ -48,7 +48,7 @@ const HeroSection=()=>{
             <CheckoutModal onClose={()=>setCheckoutModal(false)}/>
           )}
         
-          <div className="h-[400p  s overflow-hidden w-full bg-[#3F6C54]" >
+          <div className=" overflow-hidden w-full bg-[#3F6C54]" >
             {/* sm:h-[400px] */}
                 <Slider {...sliderSettings} className="md:h-screen h-[60vh]">
                     {images.map((src, index) => (
