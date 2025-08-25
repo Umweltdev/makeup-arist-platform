@@ -50,9 +50,9 @@ input[type="text"], input[type="number"], input[type="email"], textarea, select,
   /* color: white !important; */
 }
 
-/* .slick-prev{
+.slick-prev{
 left:10px !important;
-} */
+}
 .slick-next {
 right: 10px !important;
 }
